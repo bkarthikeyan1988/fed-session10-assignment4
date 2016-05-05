@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Session 10 Assignment 2</title>
+	<meta charset="UTF-8" />
+	<script src="js/angular.min.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+		var myApp = angular.module('multipleScope', []);
+		myApp.controller('FirstController', ['$scope', function($scope) {
+		  $scope.message = '1st Controller with the scope';
+		}]);
+		myApp.controller('SecondController', ['$scope', function($scope) {
+		  $scope.message = '2nd controller with the same scope';
+		}]);
+	</script>
+	<!-- Angular Script Block Ends -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- CSS Block Ends -->
+</head>
+<body ng-app="multipleScope">
+	<ul>
+		<li ng-controller="FirstController">{{message}}</li>
+		<li ng-controller="SecondController">{{message}}</li>
+	</ul>
+</body>
+</html>
